@@ -13,9 +13,8 @@ import sys,os
 import cv2
 import time
 
-
-
-
+q = Queue()
+flag = 0
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, *args, **kwargs):
@@ -82,8 +81,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.timeSlider.valueChanged.connect(self.mediaPlayer.setPosition)
         self.mediaPlayer.durationChanged.connect(self.update_duration)
         self.mediaPlayer.positionChanged.connect(self.update_position)
-        self.ipmodulePushButton.clicked.connect(self.detectGesture)
+        self.ipmodulePushButton.clicked.connect(self.viewWin)
         self.mediaPlayer.volumeChanged.connect(self.volumeSlider.setValue)
+
+    
+    def viewWin(self):
+        global flag
+        if flag == 0:
+            q.put("True")
+        elif flag ==1:
+            q.put("False")
 
     def detectGesture(self,gest,cap):
         while True :
@@ -91,8 +98,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             hand,out=hd.Gesture_Detection(img)
             # print(hand)
             # time.sleep(0.5)
+            global flag
             if cv2.waitKey(1) == ord('q'):
+                cv2.destroyAllWindows()
                 break
+            if q.empty() is not True:
+                view = q.get()
+                if view == "True":
+                    flag = 1
+                elif view == "False":
+                    flag = 0
+                    cv2.destroyAllWindows()
+            if flag == 1:
+                cv2.imshow("hand gestures",img)
+                print(flag)
             print(out)
             if out in gest:
                 if out == '1':
@@ -123,9 +142,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.mediaPlayer.play()
 
 
+
 if __name__ == '__main__':
     app = QApplication([])
     w = MainWindow()
     w.show()
-    app.exec_()
-    sys.exit()
+    sys.exit(app.exec_())
