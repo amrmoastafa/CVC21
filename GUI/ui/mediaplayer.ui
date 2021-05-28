@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>453</width>
-    <height>500</height>
+    <width>600</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -123,7 +123,7 @@ QSlider::handle:horizontal:hover {
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>20</width>
+          <width>60</width>
           <height>20</height>
          </size>
         </property>
@@ -142,7 +142,7 @@ QSlider::handle:horizontal:hover {
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
+          <width>300</width>
           <height>50</height>
          </size>
         </property>
@@ -166,7 +166,7 @@ padding-right:5px;</string>
           <rect>
            <x>30</x>
            <y>10</y>
-           <width>33</width>
+           <width>80</width>
            <height>29</height>
           </rect>
          </property>
@@ -187,9 +187,9 @@ padding-right:5px;</string>
         <widget class="QPushButton" name="pauseButton">
          <property name="geometry">
           <rect>
-           <x>90</x>
+           <x>100</x>
            <y>10</y>
-           <width>33</width>
+           <width>80</width>
            <height>29</height>
           </rect>
          </property>
@@ -210,9 +210,9 @@ padding-right:5px;</string>
         <widget class="QPushButton" name="stopButton">
          <property name="geometry">
           <rect>
-           <x>150</x>
+           <x>180</x>
            <y>10</y>
-           <width>33</width>
+           <width>80</width>
            <height>29</height>
           </rect>
          </property>
@@ -239,7 +239,7 @@ padding-right:5px;</string>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>40</width>
+          <width>20</width>
           <height>20</height>
          </size>
         </property>
@@ -321,9 +321,21 @@ QSlider::handle:horizontal:hover {
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
        <widget class="QPushButton" name="ipmodulePushButton">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>40</height>
+         </size>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(118, 253, 248);
-color: rgb(50, 50, 50);</string>
+font: 10pt &quot;Trebuchet MS&quot;;
+
+color: rgb(59, 59, 59);
+border-radius:10px;
+padding-left:5px;
+padding-right:5px;
+font-weight:bold;</string>
         </property>
         <property name="text">
          <string>Open Image Processing Module</string>
@@ -339,7 +351,7 @@ color: rgb(50, 50, 50);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>453</width>
+     <width>600</width>
      <height>26</height>
     </rect>
    </property>

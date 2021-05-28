@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(453, 500)
+        MainWindow.resize(600, 600)
         MainWindow.setStyleSheet("background-color: rgb(0, 0, 0);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -73,7 +73,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addLayout(self.horizontalLayout)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        spacerItem = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(60, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem)
         self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
         self.groupBox.setEnabled(False)
@@ -82,7 +82,7 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(2)
         sizePolicy.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
         self.groupBox.setSizePolicy(sizePolicy)
-        self.groupBox.setMinimumSize(QtCore.QSize(200, 50))
+        self.groupBox.setMinimumSize(QtCore.QSize(300, 50))
         self.groupBox.setMaximumSize(QtCore.QSize(74, 45))
         self.groupBox.setStyleSheet("background-color: rgb(118, 253, 248);\n"
 "border-radius:20px;\n"
@@ -91,7 +91,7 @@ class Ui_MainWindow(object):
         self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
         self.playButton = QtWidgets.QPushButton(self.groupBox)
-        self.playButton.setGeometry(QtCore.QRect(30, 10, 33, 29))
+        self.playButton.setGeometry(QtCore.QRect(30, 10, 80, 29))
         self.playButton.setStyleSheet("background-color: rgb(118, 253, 248);\n"
 "border-radius:10px;\n"
 "padding-left:5px;\n"
@@ -102,7 +102,7 @@ class Ui_MainWindow(object):
         self.playButton.setIcon(icon)
         self.playButton.setObjectName("playButton")
         self.pauseButton = QtWidgets.QPushButton(self.groupBox)
-        self.pauseButton.setGeometry(QtCore.QRect(90, 10, 33, 29))
+        self.pauseButton.setGeometry(QtCore.QRect(100, 10, 80, 29))
         self.pauseButton.setStyleSheet("background-color: rgb(118, 253, 248);\n"
 "border-radius:10px;\n"
 "padding-left:5px;\n"
@@ -113,7 +113,7 @@ class Ui_MainWindow(object):
         self.pauseButton.setIcon(icon1)
         self.pauseButton.setObjectName("pauseButton")
         self.stopButton = QtWidgets.QPushButton(self.groupBox)
-        self.stopButton.setGeometry(QtCore.QRect(150, 10, 33, 29))
+        self.stopButton.setGeometry(QtCore.QRect(180, 10, 80, 29))
         self.stopButton.setStyleSheet("background-color: rgb(118, 253, 248);\n"
 "border-radius:10px;\n"
 "padding-left:5px;\n"
@@ -124,7 +124,7 @@ class Ui_MainWindow(object):
         self.stopButton.setIcon(icon2)
         self.stopButton.setObjectName("stopButton")
         self.horizontalLayout_2.addWidget(self.groupBox)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem1)
         self.volumeLabel = QtWidgets.QLabel(self.centralwidget)
         self.volumeLabel.setText("")
@@ -165,14 +165,21 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.ipmodulePushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.ipmodulePushButton.setMinimumSize(QtCore.QSize(200, 40))
         self.ipmodulePushButton.setStyleSheet("background-color: rgb(118, 253, 248);\n"
-"color: rgb(50, 50, 50);")
+"font: 10pt \"Trebuchet MS\";\n"
+"\n"
+"color: rgb(59, 59, 59);\n"
+"border-radius:10px;\n"
+"padding-left:5px;\n"
+"padding-right:5px;\n"
+"font-weight:bold;")
         self.ipmodulePushButton.setObjectName("ipmodulePushButton")
         self.horizontalLayout_3.addWidget(self.ipmodulePushButton)
         self.verticalLayout_2.addLayout(self.horizontalLayout_3)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 453, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 26))
         self.menubar.setStyleSheet("color: rgb(255, 255, 255);\n"
 "border-color: rgb(255, 255, 255);\n"
 "alternate-background-color: rgb(255, 255, 255);")
