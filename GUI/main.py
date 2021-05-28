@@ -97,7 +97,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             success, img=cap.read()
             hand,out=hd.Gesture_Detection(img)
             # print(hand)
-            # time.sleep(0.5)
+            time.sleep(0.2)
             global flag
             if cv2.waitKey(1) == ord('q'):
                 cv2.destroyAllWindows()
@@ -111,25 +111,46 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     cv2.destroyAllWindows()
             if flag == 1:
                 cv2.imshow("hand gestures",img)
-                print(flag)
             print(out)
             if out in gest:
                 if out == '1':
                     self.mediaPlayer.pause()
+                    continue
                 elif out == '2':
                     self.mediaPlayer.play()
+                    continue
                 elif out == '3':
                     self.mediaPlayer.setVolume((self.mediaPlayer.volume() - 10))
+                    continue
                 elif out == '4':
                     self.mediaPlayer.setVolume((self.mediaPlayer.volume() + 10))
+                    continue
                 elif out == 'up':
                     if self.mediaPlayer.playbackRate() < 3.0:
                         self.mediaPlayer.setPlaybackRate(self.mediaPlayer.playbackRate() + 0.5)
                     print(self.mediaPlayer.playbackRate())
+                    continue
                 elif out == 'down':
                     if self.mediaPlayer.playbackRate() > 1.0:
                         self.mediaPlayer.setPlaybackRate(self.mediaPlayer.playbackRate() - 0.5)
                     print(self.mediaPlayer.playbackRate())
+                    continue
+            gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+            face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+            eye_cascade = cv2.CascadeClassifier('haarcascade_eye_tree_eyeglasses.xml')
+
+            faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+            for (x,y,w,h) in faces:
+                cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
+                roi_gray = gray[y:y+h, x:x+w]
+                roi_color = img[y:y+h, x:x+w]
+                eyes = eye_cascade.detectMultiScale(roi_gray)
+
+            if (len(eyes) == 0) or (len(faces) == 0):
+                print("eyes closed")
+                self.mediaPlayer.pause()
+                continue
+
         cv2.destroyAllWindows()
 
 
