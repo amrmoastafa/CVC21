@@ -138,6 +138,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         filepath = path[0]
         if filepath == "":
             return
+        self.groupBox.setEnabled(True)
+        self.timeSlider.setEnabled(True)
+        self.volumeSlider.setEnabled(True)
         self.mediaPlayer.setMedia(QMediaContent(QUrl(filepath)))
         self.mediaPlayer.play()
 

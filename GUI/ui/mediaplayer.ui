@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>450</width>
+    <width>453</width>
     <height>500</height>
    </rect>
   </property>
@@ -43,7 +43,7 @@
        <widget class="QLabel" name="currentTime">
         <property name="minimumSize">
          <size>
-          <width>80</width>
+          <width>60</width>
           <height>0</height>
          </size>
         </property>
@@ -60,6 +60,31 @@
       </item>
       <item>
        <widget class="QSlider" name="timeSlider">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QSlider::groove:horizontal { 
+	background-color: white;
+	border: 0px solid #424242; 
+	height: 10px; 
+	border-radius: 4px;
+}
+QSlider::handle:horizontal { 
+	background-color: dark-blue; 
+	border: 2px solid rgb(118, 253, 248); 
+	width: 16px; 
+	height: 20px; 
+	line-height: 20px; 
+	margin-top: -5px; 
+	margin-bottom: -5px; 
+	border-radius:10px; 
+}
+
+QSlider::handle:horizontal:hover { 
+	border-radius: 10px;
+}</string>
+        </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -69,7 +94,7 @@
        <widget class="QLabel" name="totalTime">
         <property name="minimumSize">
          <size>
-          <width>80</width>
+          <width>60</width>
           <height>0</height>
          </size>
         </property>
@@ -105,45 +130,106 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="playButton">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(168, 0, 0);</string>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="enabled">
+         <bool>false</bool>
         </property>
-        <property name="text">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>2</horstretch>
+          <verstretch>2</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>74</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(118, 253, 248);
+border-radius:20px;
+padding-left:5px;
+padding-right:5px;</string>
+        </property>
+        <property name="title">
          <string/>
         </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>images/control-play.png</normaloff>images/control-play.png</iconset>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pauseButton">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(168, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>images/control-pause.png</normaloff>images/control-pause.png</iconset>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="stopButton">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(168, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>images/control-stop-square.png</normaloff>images/control-stop-square.png</iconset>
-        </property>
+        <widget class="QPushButton" name="playButton">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>10</y>
+           <width>33</width>
+           <height>29</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(118, 253, 248);
+border-radius:10px;
+padding-left:5px;
+padding-right:5px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>images/control-play.png</normaloff>images/control-play.png</iconset>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pauseButton">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>10</y>
+           <width>33</width>
+           <height>29</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(118, 253, 248);
+border-radius:10px;
+padding-left:5px;
+padding-right:5px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>images/control-pause.png</normaloff>images/control-pause.png</iconset>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="stopButton">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>10</y>
+           <width>33</width>
+           <height>29</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(118, 253, 248);
+border-radius:10px;
+padding-left:5px;
+padding-right:5px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>images/control-stop-square.png</normaloff>images/control-stop-square.png</iconset>
+         </property>
+        </widget>
        </widget>
       </item>
       <item>
@@ -171,6 +257,37 @@
       </item>
       <item>
        <widget class="QSlider" name="volumeSlider">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>500</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QSlider::groove:horizontal { 
+	background-color: white;
+	border: 0px solid #424242; 
+	height: 10px; 
+	border-radius: 4px;
+}
+QSlider::handle:horizontal { 
+	background-color: dark-blue; 
+	border: 2px solid rgb(118, 253, 248); 
+	width: 16px; 
+	height: 20px; 
+	line-height: 20px; 
+	margin-top: -5px; 
+	margin-bottom: -5px; 
+	border-radius:10px; 
+}
+
+QSlider::handle:horizontal:hover { 
+	border-radius: 10px;
+}</string>
+        </property>
         <property name="maximum">
          <number>100</number>
         </property>
@@ -188,11 +305,11 @@
          <enum>Qt::Horizontal</enum>
         </property>
         <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
+         <enum>QSizePolicy::Preferred</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>20</width>
+          <width>60</width>
           <height>20</height>
          </size>
         </property>
@@ -205,8 +322,8 @@
       <item>
        <widget class="QPushButton" name="ipmodulePushButton">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(168, 0, 0);
-color: rgb(255, 255, 255);</string>
+         <string notr="true">background-color: rgb(118, 253, 248);
+color: rgb(50, 50, 50);</string>
         </property>
         <property name="text">
          <string>Open Image Processing Module</string>
@@ -222,7 +339,7 @@ color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>450</width>
+     <width>453</width>
      <height>26</height>
     </rect>
    </property>
