@@ -11,7 +11,10 @@ it is highly advisable to create a virtual envrionment before installing and usi
 
 ### Demo
 
-https://user-images.githubusercontent.com/31225919/119913931-76270880-bf5f-11eb-80bd-ad68e14e666e.mp4
+
+https://user-images.githubusercontent.com/31225919/120048418-5c48fc80-c017-11eb-91ee-617e8999b87b.mp4
+
+
 
 
 
